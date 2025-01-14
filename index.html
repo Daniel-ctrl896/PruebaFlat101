@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Título</title>
+    <script>
+        //SCRIPT PARA AÑADIR EN LA CONSOLA DEL NAVEGADOR EN LA PAGINA https://www.flat101.es/
+        let originalTitle = document.title;
+        let hasTabFocus = true;
+
+        function handleVisibilityChange() {
+            if (window.location.hostname === 'https://www.flat101.es/') {
+                if (document.visibilityState === 'hidden') {
+                    document.title = "Te echamos de menos...";
+                    hasTabFocus = false;
+                } else {
+                    document.title = originalTitle;
+                    hasTabFocus = true;
+                }
+            }
+        }
+
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+    </script>
+    <script>
+        //SCRIPT PARA EJECUTAR EN LOCAL
+        let originalTitle = document.title;
+
+        function handleVisibilityChange() {
+            if (document.visibilityState === 'hidden') {
+                document.title = "Te echamos de menos...";
+            } else {
+                document.title = originalTitle;
+            }
+        }
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+    </script>
+</head>
+<body>
+    <h1>Cambia de pestaña y Observa</h1>
+    <p>Para comprobar el cambio de título, selecciona otra pestaña y verás la magia.</p>
+
+    <img src="https://media.istockphoto.com/id/537316429/es/foto/im%C3%A1genes-de-alto-contraste-de-mago-mano-con-varita-m%C3%A1gica.jpg?s=1024x1024&w=is&k=20&c=Q4AX7XzWBoIZhGcP30s_Vf1g0M5v9R_sUfoobCwWVfk=" alt="Varita mágica" width="200" height="200">
+
+</body>
+</html>
